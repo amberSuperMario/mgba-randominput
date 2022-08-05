@@ -10,13 +10,11 @@ end
 local delay = 0
 
 function updateBuffer()
-    if delay == 20 then
+    if delay == 40 then
         emu:addKey(random_input)
-        --onsole:log('GBA Key: ' .. emu:getKey(random_input))
     end
-    if delay == 22 then
+    if delay == 44 then
         emu:clearKey(random_input)
-        --console:log('GBA Key: ' .. emu:getKey(random_input))
         randomInput()
         delay = 0
     end
