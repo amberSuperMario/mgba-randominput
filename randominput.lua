@@ -9,11 +9,11 @@ end
 
 local delay = 0
 
-function updateBuffer()
-    if delay == 40 then
+function updateBufferKeysRead()
+    if delay == 20 then
         emu:addKey(random_input)
     end
-    if delay == 44 then
+    if delay == 22 then
         emu:clearKey(random_input)
         randomInput()
         delay = 0
@@ -21,6 +21,9 @@ function updateBuffer()
     delay = delay + 1
 end
 
+function updateBufferFrame()
+end
+
 callbacks:add("frame", randomInput)
-callbacks:add("frame", updateBuffer)
-callbacks:add("keysRead", updateBuffer)
+callbacks:add("frame", updateBufferFrame)
+callbacks:add("keysRead", updateBufferKeysRead)
